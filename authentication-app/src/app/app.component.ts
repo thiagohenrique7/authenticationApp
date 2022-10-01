@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { TranslateService } from '@ngx-translate/core';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'authentication-app';
+
+  constructor(translateService: TranslateService) {
+    translateService.addLangs(['en', 'pt-br']);
+    translateService.setDefaultLang('en');
+    translateService.use('pt-br');
+  }
 }
