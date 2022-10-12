@@ -7,6 +7,11 @@
     "EMAIL": "Email",
     "PASSWORD": "Password",
     "START_CHATTING": "Start chatting now",
-    "CONTINUE_WITH": "or continue with these social profile"
+    "CONTINUE_WITH": "or continue with these social profile",
+    "ALREADY_MEMBER": "Already a member?",
+    "LOGIN": "Login",
+    "CREATED_BY": "created by",
+    "AND": "and",
+    "PINGOLS_IO": "pingols.io"
   }
 }
