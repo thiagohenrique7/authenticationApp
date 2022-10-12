@@ -1,6 +1,11 @@
 {
   "APP": {
+    "PINGOLS": "pingols",
     "LOGIN_TITLE": "Junte-se a milhares de desenvolvedores espalhados pelo mundo",
-    "LOGIN_SUBTITLE": "Jogue ou desenvolva com seus amigos. Há vários caminhos para você escolher"
+    "LOGIN_SUBTITLE": "Jogue ou desenvolva com seus amigos. Há vários caminhos para você escolher",
+    "USERNAME": "Usuário",
+    "EMAIL": "Email",
+    "PASSWORD": "Senha",
+    "START_CHATTING": "Comece a conversar agora"
   }
 }

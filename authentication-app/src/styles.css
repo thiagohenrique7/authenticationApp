@@ -1,4 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 .vh-100 {
   height: 100vh;
@@ -6,4 +7,16 @@
 
 .font-noto {
   font-family: 'Noto Sans', sans-serif;
+}
+
+.font-silk {
+  font-family: 'Silkscreen', cursive;
+}
+
+.text-gray {
+  color: #333333;
+}
+
+.text-light-gray {
+  color: #828282;
 }
