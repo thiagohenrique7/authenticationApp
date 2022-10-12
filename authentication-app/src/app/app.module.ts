@@ -1,7 +1,9 @@
+import { RegisterInfoComponent } from './authentication-pages/components/register-info/register-info.component';
+import { AuthenticationModalComponent } from './authentication-pages/containers/authentication-modal/authentication-modal.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http/index';
+import { HttpClient } from '@angular/common/http';
 
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -11,7 +13,9 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthenticationModalComponent,
+    RegisterInfoComponent,
   ],
   imports: [
     BrowserModule,
