@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { AuthenticationModalComponent } from './authentication-pages/containers/authentication-modal/authentication-modal.component';
+
+const routes: Routes = [
+  { path: '', component: AuthenticationModalComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
