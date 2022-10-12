@@ -6,6 +6,7 @@
     "USERNAME": "Username",
     "EMAIL": "Email",
     "PASSWORD": "Password",
-    "START_CHATTING": "Start chatting now"
+    "START_CHATTING": "Start chatting now",
+    "CONTINUE_WITH": "or continue with these social profile"
   }
 }
