@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { LoginUserDto } from './dto/login-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -10,6 +11,20 @@ export class UsersController {
   @Post()
   create(@Body() createUserDto: CreateUserDto) { //Data transfer object
     return this.usersService.create(createUserDto);
+  }
+
+  @Post('login')
+  async autheticationUser(@Body() loginUser: LoginUserDto ){
+    let auth =  await this.usersService.authetication(loginUser)
+    if (auth == null){
+      return { 
+        login: false,
+        data: "Usuário ou senha inválidos" }
+    }else{
+      return{
+        login:true,
+        data: auth}
+    }
   }
 
   @Get()
