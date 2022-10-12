@@ -1,2 +1,0 @@
-# authenticationApp
-Challenge with JeffWall
