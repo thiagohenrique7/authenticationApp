@@ -14,6 +14,7 @@ export class UsersService {
     private repository: Repository <User>) {}
 
   async create(createUserDto: CreateUserDto) {
+    console.log(createUserDto)
     const user = this.repository.create({
       email: createUserDto.email,
       password: createUserDto.password,
@@ -21,13 +22,19 @@ export class UsersService {
       last_connection: new Date().toLocaleDateString(),
       is_premium:0
     });
+    console.log(createUserDto)
+    console.log(user)
     
     let alreadyExists  = await this.findByUserNameOrEmail(user.username, user.email)
     if (alreadyExists){
-      return { data: "Usuario ou Email já cadastrados"}
+      return { 
+        created: false,
+        data: "Usuario ou Email já cadastrados"}
     }else{
       await this.repository.insert(user);
-      return {data: user};
+      return {
+        created: true,
+        data: user};
     }
   }
 
@@ -57,8 +64,22 @@ export class UsersService {
 
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    let userToUpdate!: UpdateUserDto
+    userToUpdate = await this.repository.findOneBy({id: id})
+    userToUpdate.biography = updateUserDto.biography
+    userToUpdate.phone = updateUserDto.phone
+    console.log(updateUserDto)
+    if (updateUserDto.email){
+      userToUpdate.email = updateUserDto.email
+    }
+    if (updateUserDto.password){
+      userToUpdate.password = updateUserDto.password
+    }
+    console.log(userToUpdate)
+    this.repository.save(userToUpdate)
+
+    return userToUpdate;
   }
 
   remove(id: number) {

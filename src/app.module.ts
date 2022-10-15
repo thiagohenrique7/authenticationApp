@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './modules/users/entities/user.entity';
-// import { UserController } from './modules/users/user.controller';
-// import { UserService } from './modules/users/user.service';
-// import { UsersModule } from './modules/users/users.module';
 import { UsersModule } from './modules/users/users.module';
+import { ChannelsModule } from './modules/channels/channels.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { MessagesModule } from './modules/messages/messages.module';
 
 @Module({ //ES7 DECORATORS
   imports: [UsersModule,
@@ -18,7 +18,11 @@ import { UsersModule } from './modules/users/users.module';
       entities: [User],
       synchronize: true,
     }),
+    MongooseModule.forRoot('mongodb+srv://root:pingolasdev@apicluster.ohe3fbc.mongodb.net/messagesApiAuth?retryWrites=true&w=majority'),
+    ChannelsModule,
+    MessagesModule,
   ],
+  // mongodb+srv://root:pingolasdev@apicluster.ohe3fbc.mongodb.net/messagesApiAuth?retryWrites=true&w=majority
   controllers: [],
   providers: [],
 })

@@ -8,18 +8,24 @@ export class User{
     })
     id!: number;
 
-    @Column({length: 255})
+    @Column({length: 100})
     email!: string;
 
-    @Column({length: 255})
-    password!: string;
+    @Column({length: 100})
+    password!: string
 
-    @Column({length: 255})
+    @Column({length: 55})
     username!: string;
 
-    @Column({length: 255})
+    @Column({length: 55})
     last_connection!: string;
 
-    @Column()
-    is_premium!: number;
+    @Column({length: 255, nullable: true})
+    biography!: string
+
+    @Column({length: 45, nullable: true})
+    phone!: string
+
+    @Column({nullable: true})
+    is_premium: number;
 }
