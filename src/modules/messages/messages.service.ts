@@ -19,9 +19,13 @@ export class MessagesService {
   }
 
   findAll() {
-    return `This action returns all messages`;
+    return this.messageModel.find();
   }
 
+  findByMessage(word: string) {
+    return this.messageModel.findOne({content: word});
+  }
+  
   findOne(id: number) {
     return `This action returns a #${id} message`;
   }

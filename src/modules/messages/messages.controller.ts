@@ -22,6 +22,10 @@ export class MessagesController {
   findOne(@Param('id') id: string) {
     return this.messagesService.findOne(+id);
   }
+  @Get('/search/:word')
+  findMessage(@Param('word') word: string) {
+    return this.messagesService.findByMessage(word);
+  }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateMessageDto: UpdateMessageDto) {

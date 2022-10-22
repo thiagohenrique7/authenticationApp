@@ -12,7 +12,6 @@ export class ChannelsService {
   private repository: Repository <Channel>) {}
 
   create(createChannelDto: CreateChannelDto) {
-    console.log("aqui")
     return this.repository.create({
       name:createChannelDto.name,
       admin:createChannelDto.admin
@@ -20,11 +19,11 @@ export class ChannelsService {
   }
 
   findAll() {
-    return `This action returns all channels`;
+    return this.repository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} channel`;
+    return this.repository.findBy({id:id});
   }
 
   update(id: number, updateChannelDto: UpdateChannelDto) {
@@ -32,6 +31,6 @@ export class ChannelsService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} channel`;
+    return this.repository.delete(id)
   }
 }
